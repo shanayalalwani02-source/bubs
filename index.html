@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffe0f0, #ffd1e8);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 3rem;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(255, 120, 170, 0.3);
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+    }
+
+    h1 {
+      color: #ff4f87;
+      margin-bottom: 2rem;
+      font-size: 1.7rem;
+    }
+
+    button {
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+
+    #yes {
+      background: #ff4f87;
+      color: white;
+    }
+
+    #no {
+      background: #f2f2f2;
+      color: #444;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      color: #ff4f87;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Will you be my valentine, babygirl? 💕</h1>
+
+    <button id="yes">Yes 💖</button>
+    <button id="no">No</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const message = document.getElementById("message");
+
+    document.getElementById("yes").onclick = () => {
+      message.textContent = "alright bubs, see you on 14";
+    };
+
+    noBtn.addEventListener("mouseenter", () => {
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
